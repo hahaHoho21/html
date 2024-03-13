@@ -1,0 +1,20 @@
+.wrap-footer {
+    /* 2. float 배치 */
+    clear: both;
+
+    /* article의 margin-bottom만큼 이동 배치 */
+    /*     
+    position: relative;
+    top: -10px; 
+    */
+
+    background-color: blanchedalmond;
+}
+
+footer {
+    /* 1. 중앙정렬 */
+    width: 960px;
+    margin: 0 auto;
+
+    padding: 10px 0;
+}

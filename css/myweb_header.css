@@ -1,0 +1,62 @@
+/*  */
+header nav > ul{
+    /* float - 부모 */
+    overflow: hidden;
+}
+header nav > ul > li {
+    /* float - width 제외 - 고정크기x content에 따라 크기*/
+    float: left; 
+}
+header nav
+, header div.logo {
+    /* float - 해제*/
+    clear: both;
+}
+header {
+    /* 자식들의 기준점 */
+    position: relative;
+    height: 150px;
+}
+header nav.tnb {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+header nav.bnb {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+header div.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+header a{
+    display: inline-block;
+    border: 1px solid black;
+    margin-bottom: 10px;
+
+}
+
+header li:first-child a{
+    border-radius: 15px 0 0 15px;
+}
+header li:last-child a{
+    border-radius: 0 15px 15px 0;
+}
+
+header a:hover{
+    background-color: aliceblue;
+    color: black;
+}
+
+header .tnb a{
+padding: 10px 15px;
+}
+
+header .bnb a{
+padding: 10px 15px;
+
+}

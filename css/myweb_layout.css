@@ -1,0 +1,38 @@
+/*  */
+.wrap-header {
+    background-color: seashell;
+}
+.wrap-header > header{
+    /* 중앙 배치 */
+    width: 960px; margin: 0 auto;
+}
+/*  */
+.wrap-footer {
+    background-color: gainsboro;
+    /* float 배치 해제 */
+    clear: both;
+}
+.wrap-footer > footer{
+    /* 중앙 배치 */
+    width: 960px; margin: 0 auto;
+}
+/*  */
+.wrap-main {
+    background-color: mintcream;
+    /* 중앙 배치 */
+    width: 960px; margin: 0 auto;
+    padding: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+.wrap-main > section{
+    /* float 왼쪽 배치 */
+    width: 750px; float: left;
+    margin-right: 10px;
+}
+.wrap-main > aside{
+    /* float 왼쪽 배치 */
+    width: 200px; float: left;
+
+
+}

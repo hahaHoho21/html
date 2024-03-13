@@ -1,0 +1,30 @@
+section article{
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+
+}
+
+div.flex-3 {
+    display: flex;
+    /* flex-flow: nowrap; */
+    flex: auto;
+}
+
+div.flex-3 > div {
+   margin: 10px 0;
+   /* width: 10%; */
+   border: 1px solid black;
+}
+
+
+article.article-2 > div.grid-3{
+    display: grid;
+    gap: 10px;
+    margin: 10px;
+    grid-template-columns: auto auto auto;
+}
+div.grid-3 > div {
+    border: 1px solid black;
+    /* margin: 5px; */
+}
