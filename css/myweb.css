@@ -17,194 +17,209 @@ body {
     line-height: 1.2em;
 }
 
-.wrap-header {
-    background-color: rgb(255, 244, 239);
-    /* overflow: hidden; */
-    /* 자식 elements 높이 정확히 계산(absoulte제외) */
+h1 {
+    font-weight: 900;
+    font-size: 1.28em;
+    line-height: 1.3em;
+}
 
+h3 {
+    font-weight: 900;
+    font-size: 1em;
+    line-height: 1.1em;
+}
+
+/* 기본(최적) 해상도 - 960px */
+/* header */
+.wrap-header {
+    background-color: antiquewhite;
+
+    /* 자식elements(absoulte제외) 높이 정확히 계산함  */
+    /* overflow: hidden; */
 }
 
 header {
-    /* 960px;에 마진으로 중앙정렬!! */
+    /* 1. 중앙정렬 */
     width: 960px;
-    height: 160px;
-    padding: 10px;
     margin: 0 auto;
-    /* 자식에게 기준점을 잡아줌
-        absolute */
+
+    /* margin */
+    /* margin-bottom: 10px; */
+    padding-bottom: 10px;
+
+    /* position - 기준점relative - 자식 absoulte 있다면 height*/
     position: relative;
+    height: 160px;
 }
 
-/* //////////float 3종//////////// */
-/* float(필요한구문)
-   overflow:hidden;(부모태그)
-   clear:both;(다음요소-동위!!)
-*/
-header ul{
-    overflow: hidden;
-}
-
-header ul > li {
-    float: left;
-    padding: 5px;
-    /* border: 1px solid black; */
-}
-/* 보더 선 안겹치게하기~! TODO */
-ul > li {
-    /* border-color : black; */
-    border-top: 1px solid black; 
-    border-right: 1px solid black; 
-    border-bottom: 1px solid black; 
-}
-
-ul > li:first-child{
-    border-left: 1px solid black;
-    border-radius: 15px 0 0 15px;
-
-}
-ul > li:last-child{
-    border-radius: 0 15px 15px 0;
-}
-
-nav.bnb ul > li:first-child{
-    border-left: 1px solid black;
-    border-radius: 10px 0 0 10px;
-
-}
-nav.bnb ul > li:last-child{
-    border-radius: 0 10px 10px 0;
-}
-
-
-
-header nav.bnb,logo {
-    clear: both;
-    /* overflow: hidden; */
-}
-
-header nav.tnb{
-    /* position: relative; */
-    /* left: 600px; */
+header nav.tnb {
+    /* position - 배치absolute */
     position: absolute;
     right: 0;
 }
 
-header nav.bnb{
+header nav.bnb {
+    /* position - 배치absolute */
     position: absolute;
     right: 0;
     bottom: 0;
 }
 
-header div.logo{
+header div.logo {
+    /* position - 배치absolute */
     position: absolute;
     left: 50px;
-    bottom: 50px;
+    top: 50px
 }
 
-/* //////////////////////////////// */
+
+
+
+
 .wrap-main {
-    /* 960px;에 마진으로 중앙정렬!! */
+    /* 1. 중앙정렬 */
     width: 960px;
     margin: 0 auto;
-    box-sizing: border-box;
-
-
 }
 
 section {
+    /* 2. float 배치 */
     float: left;
     width: 750px;
-    margin-right: 10px;
 
+    margin-right: 10px;
 }
 
 aside {
-    background-color: rgb(214, 233, 233);
-    border: 1px solid rgb(134, 134, 134);
-    float: right;
+    /* 2. float 배치 */
+    float: left;
     width: 200px;
+
+    /* 테두리 */
+    border: 1px solid black;
     box-sizing: border-box;
 
 }
 
 .wrap-footer {
-    background-color: rgb(195, 195, 195);
+    /* 2. float 배치 */
     clear: both;
-    /* (position) article의 margin-bottom만큼 이동 */
-    /* position: relative;
-    top: -10px; */
 
+    /* article의 margin-bottom만큼 이동 배치 */
+    /*     
+    position: relative;
+    top: -10px; 
+    */
+
+    background-color: blanchedalmond;
 }
 
 footer {
-    /* 960px;에 마진으로 중앙정렬!! */
+    /* 1. 중앙정렬 */
     width: 960px;
     margin: 0 auto;
+
     padding: 10px 0;
-
 }
-
 
 article {
-    border: 1px solid rgb(134, 134, 134);
+    /* 테두리 */
+    border: 1px solid black;
     box-sizing: border-box;
+
     padding: 10px;
-    margin: 10px;
+
+    margin-bottom: 10px;
 }
 
-/* 아티클 마지막 자식만 변경 */
-/* 아티클스타일보다 우선순위 */
-/* 우선순위 정리
-기본 > 
-디테일한 기본 > 
-. > 
-# > 
-복합 */
-
+/* 우선순위에서 article 보다 높음 */
 article:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
-article:first-child {
-    margin-top: 0px;
+nav > ul {
+    /* float 의 부모노드 overflow hidden */
+    overflow: hidden;
 }
 
-.topMenu {
-    position: absolute;
-    top: 0px;
-    right: 80px;
+nav > ul > li {
+    /* display: inline-block; li요소 사이줄바꿈으로 한칸띄워쓰기문제 */
+    /* float */
+    float: left;
+    /* padding: 5px;  내부 a 태그에 padding 넣기*/
+    /* border: 1px solid black; */
 }
 
-
-h1 {
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 50px;
+nav>ul>li>a {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
-h3 {
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 35px;
+nav>ul>li:first-child>a {
+    border-left: 1px solid black;
 }
 
-a {
+nav.tnb>ul>li:first-child>a {
+    border-left: 1px solid black;
+    border-radius: 15px 0 0 15px;
+}
+
+nav.tnb>ul>li:last-child>a {
+    border-radius: 0 15px 15px 0;
+}
+
+nav.bnb>ul>li:first-child>a {
+    border-left: 1px solid black;
+    border-radius: 10px 0 0 10px;
+}
+
+nav.bnb>ul>li:last-child>a {
+    border-radius: 0 10px 10px 0;
+}
+
+nav.bnb,
+.logo {
+    /* float 의 동위노드에 clear */
+    clear: both;
+}
+
+nav a {
     display: inline-block;
-    padding: 5px;
+    padding: 10px;
     text-decoration: none;
     color: black;
 }
-/* a:link {
-    color: aqua;
+
+nav a:hover {
+    color: white;
+    background-color: black;
+}
+
+.tab_item > ul > li {
+    clear: both;
+}
+.tab_item > ul > li {
+    overflow: hidden;
+}
+
+.tab_item > ul > li > a > div:first-child{
+    float: left;
+    width: 45px;
+    margin-right: 10px;
+    /* padding: 5px; */
+}
+.tab_item > ul > li > a > div:last-child{
+    float: left;
+    width: 120px;
+}
+
+.tab_item > ul > li {
+    /* border: 1px solid black; */
+    padding: 10px;
 
 }
-a:visited{
-    color: rgb(34, 39, 0);
-}
-a:active{
-    color: red;
-} */
-a:hover{
-    color: white;
-    background-color: rgb(0, 0, 0);
+
+.tab_item > ul > li:nth-child(1) > a > div:nth-child(2){
+    
 }
