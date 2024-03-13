@@ -1,0 +1,101 @@
+/* layout */
+body {
+    background-color: rgb(238, 238, 238);
+    border: 1px solid black;
+    box-sizing: border-box;
+    /* margin:0px auto; */
+}
+
+div.wrap {
+    width: 960px;
+    margin: 0 auto;
+    border: 1px solid black;
+    
+}
+
+.wrap > wrap-nav {
+    width: 960px;
+    margin: 0 auto;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 242);
+}
+
+header {
+    width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.wrap-content{
+    position: relative;
+    /* left: 10px;
+    top: 15px; */
+    width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    
+}
+
+section {
+    
+    background-color: rgb(253, 223, 223);
+    width: 80%;
+    top:0;
+    left: 10;
+}
+
+article {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+aside {
+    background-color: rgb(254, 255, 211);
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.wrap-nav {
+    width: 960px;
+    margin: 0 auto;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 242);
+}
+
+footer {
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+nav.li {
+    background-color: rgb(61, 61, 0);
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.wrap > * {
+    margin-bottom: 10px;
+
+}
+
+
+/* font size */
+.fs-1 {
+    font-size: 24px;
+}
+
+.fs-2 {
+    font-size: 18px;
+}
+
+.fs-3 {
+    font-size: 16px;
+}
+
+.fs-4 {
+    font-size: 14px;
+}
+
+.fs-5 {
+    font-size: 12px;
+}

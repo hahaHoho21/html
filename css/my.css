@@ -1,0 +1,43 @@
+body {
+    border : 1px solid black;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 246);
+    margin: 0 auto;
+}
+
+table{
+    margin: 10px;
+    border: 1px solid black;
+    width: 500px;
+    height: 200px;
+}
+td {
+    border: 1px solid black;
+}
+th {
+    border: 1px solid black;
+}
+
+span {
+    color: yellowgreen;
+}
+#a1{
+    text-decoration-line: none;
+}
+.input{
+    background-color: beige
+}
+input{
+    background-color: antiquewhite;
+}
+label{
+    color: aqua;
+}
+.tc-red{
+    color: red;
+    font-style: italic;
+}
+.bg-blue{
+    background-color: blue;
+    font-style: italic;
+}
