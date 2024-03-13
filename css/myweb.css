@@ -72,10 +72,6 @@ header div.logo {
     top: 50px
 }
 
-
-
-
-
 .wrap-main {
     /* 1. 중앙정렬 */
     width: 960px;
@@ -92,6 +88,7 @@ section {
 
 aside {
     /* 2. float 배치 */
+    
     float: left;
     width: 200px;
 
@@ -99,6 +96,11 @@ aside {
     border: 1px solid black;
     box-sizing: border-box;
 
+}
+
+aside > .HTML5 {
+    /* TODO */
+    right: 0;
 }
 
 .wrap-footer {
@@ -137,12 +139,12 @@ article:last-child {
     margin-bottom: 0;
 }
 
-nav > ul {
+nav>ul {
     /* float 의 부모노드 overflow hidden */
     overflow: hidden;
 }
 
-nav > ul > li {
+nav>ul>li {
     /* display: inline-block; li요소 사이줄바꿈으로 한칸띄워쓰기문제 */
     /* float */
     float: left;
@@ -196,30 +198,83 @@ nav a:hover {
     background-color: black;
 }
 
-.tab_item > ul > li {
+.tab_item>ul>li {
     clear: both;
 }
-.tab_item > ul > li {
+
+.tab_item>ul>li {
     overflow: hidden;
 }
 
-.tab_item > ul > li > a > div:first-child{
+.tab_item>ul>li>a>div:first-child {
     float: left;
     width: 45px;
     margin-right: 10px;
     /* padding: 5px; */
 }
-.tab_item > ul > li > a > div:last-child{
+
+.tab_item>ul>li>a>div:not(first-child) {
     float: left;
     width: 120px;
 }
 
-.tab_item > ul > li {
+.tab_item>ul>li {
     /* border: 1px solid black; */
     padding: 10px;
-
 }
 
-.tab_item > ul > li:nth-child(1) > a > div:nth-child(2){
+
+input[type=radio] {
+    /* 공간차지 없는 요소 */
+    display: none;
+
+    /* 공간차지하면서 화면에서 안보이게 */
+    /* visibility: hidden; */
+}
+
+input[type=radio]:nth-of-type(1):checked{
     
+    height: 50px;
+    width: 50px;
 }
+input[type=radio]:nth-of-type(2):checked{
+    height: 50px;
+    width: 50px;
+}
+
+
+input[type=radio]:nth-of-type(1):checked~div:nth-of-type(1) {
+    display: block;
+}
+
+input[type=radio]:nth-of-type(1):checked~div:nth-of-type(2) {
+    display: none;
+}
+
+input[type=radio]:nth-of-type(2):checked~div:nth-of-type(1) {
+    display: none;
+}
+
+input[type=radio]:nth-of-type(2):checked~div:nth-of-type(2) {
+    display: block;
+}
+
+.tab_item>ul>li:nth-of-type(2n) {
+    background-color: #CCC;
+}
+
+.tab_item>ul>li:nth-of-type(2n+1) {
+    background-color: #ffefef;
+}
+
+/* .tab_item > ul > li > a > div:last-child{ */
+/* 
+.HTML5{
+    display: inline-block
+    pa
+}
+.CSS{
+    display: inline-block
+
+} */
+
