@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼태그처음</title>
+    <style>       
+    @import url(../css/my.css);
+    span {
+        color: violet;
+        text-align: center;
+    }
+    label, span {
+        width: 300px;
+        color: blue;
+    }
+    </style>
+<!--     
+    <link href="../css/my.css" rel="stylesheet" type="text/css">
+-->
+</head>
+<body>
+    <a href="#n5v" id="a1" class="aclass1">내부링크테스트</a>
+    <h1 class="tc-red bg-blue">input type 종류별</h1>
+    <span style="color: aqua;">http://192.168.10.6:5500/views/20240308_form_01.html?n1=a&n2=b&n3=&n5=on&n6=t.PNG&n7=on&n8=%EC%A0%9C%EC%B6%9C#</span>
+    <form method="get" action="#" >
+        <div>
+            <label for="n1text">text - value=사용자입력</label>
+            <input type="text" name="n1" id="n1text" class="input text1">
+        </div>
+        <div>
+            <span>password - value=사용자입력</span>
+            <input type="password" name="n2" class="input  pwd1">
+        </div>
+        <div>
+            <span>hidden</span>
+            <input type="hidden" name="n3" value="v3필수">
+        </div>
+        <div>
+            <span>button - 사용자입력데이터전송용도가 아니므로 name속성쓰지마세요!!!</span>
+            <input type="button" value="버튼명1">
+        </div>
+        <div>
+            <span>checkbox - name속성값으로 그룹핑- 반드시value -String[] n5Arr = request.getParameterValues("n5"); // checkbox </span>
+            <br>
+            <label for="n5v">배구:</label><input type="checkbox" name="n5" value="v" id="n5v">
+            <label for="n5b">야구:</label><input type="checkbox" name="n5" value="b" id="n5b">
+            <label for="n5s">축구:</label><input type="checkbox" name="n5" value="s" id="n5s">
+            <br>
+            <span>Java:</span><input type="checkbox" name="n10" value="j">
+            <span>HTML:</span><input type="checkbox" name="n10" value="h" checked="checked">
+            <span>JDBC:</span><input type="checkbox" name="n10" value="d" checked="checked">
+        </div>
+        <div>
+            <span>file</span>
+            <input type="file" name="n6">
+        </div>
+        <div>
+            <span>radio - name속성값으로 그룹핑- 반드시value</span>
+            <br>
+            <span>Java:</span><input type="radio" name="n7" value="j">
+            <span>Oracle:</span><input type="radio" name="n7" value="o" checked="checked">
+            <br>
+            <span>HTML:</span><input type="radio" name="n11" value="h">
+            <span>CSS:</span><input type="radio" name="n11" value="c">
+            <span>JS:</span><input type="radio" name="n11" value="s">
+        </div>
+        <div>
+            <span>submit - 사용자입력데이터전송용도가 아니므로 name속성쓰지마세요!!!</span>
+            <input type="submit" >
+        </div>
+        <div>
+            <span>reset - 사용자입력데이터전송용도가 아니므로 name속성쓰지마세요!!!</span>
+            <input type="reset" >
+        </div>
+    </form>
+
+
+
+
+    <h1 class="tc-black bg-blue">web31copy dept insert</h1>
+    <form method="post" action="http://127.0.0.1:8080/web31copy/dept/insert" autocomplete="on" target="_blank">
+        <fieldset>
+            <legend>부서추가</legend>
+            <div>
+                <span>deptno: </span>
+                <input type="text" name="deptno" placeholder="부서번호숫자2자리입력해주세요">
+            </div>
+            <div>
+                <span>dname: </span>
+                <input type="text" name="dname" >
+            </div>
+            <div>
+                <span>loc: </span>
+                <input type="text" name="loc" value="seoul">
+            </div>
+        </fieldset>
+            <div>
+                <input type="submit" value="제출말고다른이름">
+                <input type="reset" value="초기화말고다른이름">
+            </div>
+        
+    </form>
+    <form method="post" action="http://127.0.0.1:8080/web31copy/dept/insert" autocomplete="on" target="_blank">
+        <input type="text" name="deptno" >
+        <input type="text" name="dname" >
+        <input type="text" name="loc" value="seoul">
+        <input type="submit" value="제출말고다른이름">
+        <input type="reset" value="초기화말고다른이름">
+    </form>
+</body>
+</html>
