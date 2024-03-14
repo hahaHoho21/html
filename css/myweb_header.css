@@ -13,50 +13,42 @@ header nav
     clear: both;
 }
 header {
-    /* 자식들의 기준점 */
-    position: relative;
-    height: 150px;
+    /* position - absoulte 자식들의 기준점 */
+    position: relative; height: 150px;
 }
 header nav.tnb {
-    position: absolute;
-    right: 0;
-    top: 0;
+    /* position - absoulte 배치 */
+    position: absolute; right: 0; top: 0;
 }
 header nav.bnb {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    /* position - absoulte 배치 */
+    position: absolute; right: 0; bottom: 0;
 }
 header div.logo {
-    position: absolute;
-    top: 20px;
-    left: 30px;
+    /* position - absoulte 배치 */
+    position: absolute; top: 20px; left: 30px;
 }
 
-header a{
+/* li-a 링크 padding, border , background*/
+header a {
+    /* 원래 inline -> inline-block 이유 : width,height,padding,margin */
     display: inline-block;
+
     border: 1px solid black;
-    margin-bottom: 10px;
-
 }
-
-header li:first-child a{
+header li:first-child > a {
     border-radius: 15px 0 0 15px;
 }
-header li:last-child a{
+header li:last-child > a {
     border-radius: 0 15px 15px 0;
 }
-
-header a:hover{
-    background-color: aliceblue;
-    color: black;
-}
-
 header .tnb a{
-padding: 10px 15px;
+    padding: 5px 10px;
 }
-
 header .bnb a{
-padding: 10px 15px;
-
+    padding: 10px 15px;
+}
+header a:hover{
+    background-color: black;
+    color: whitesmoke;
 }

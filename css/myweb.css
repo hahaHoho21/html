@@ -88,7 +88,7 @@ section {
 
 aside {
     /* 2. float 배치 */
-    
+
     float: left;
     width: 200px;
 
@@ -98,7 +98,7 @@ aside {
 
 }
 
-aside > .HTML5 {
+aside>.HTML5 {
     /* TODO */
     right: 0;
 }
@@ -232,31 +232,64 @@ input[type=radio] {
     /* visibility: hidden; */
 }
 
-input[type=radio]:nth-of-type(1):checked{
-    
-    height: 50px;
-    width: 50px;
-}
-input[type=radio]:nth-of-type(2):checked{
-    height: 50px;
-    width: 50px;
-}
-
-
-input[type=radio]:nth-of-type(1):checked~div:nth-of-type(1) {
+.tab_item .ahtml {
     display: block;
 }
 
-input[type=radio]:nth-of-type(1):checked~div:nth-of-type(2) {
-    display: none;
-}
-
-input[type=radio]:nth-of-type(2):checked~div:nth-of-type(1) {
-    display: none;
-}
-
-input[type=radio]:nth-of-type(2):checked~div:nth-of-type(2) {
+.tab_item .acss {
     display: block;
+}
+
+aside > div > li > a {
+    border: 1px solid black;
+}
+
+
+.lableRadio label {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.3em;
+    margin: 0 auto;
+    border: 1px solid black;
+    /* text-align: center; */
+}
+
+/* 
+input[type=radio]:nth-of-type(1):checked {
+
+    height: 50px;
+    width: 50px;
+}
+
+input[type=radio]:nth-of-type(2):checked {
+    height: 50px;
+    width: 50px;
+} */
+
+/* 
+.radiobox{
+    height: 40px;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 23px;
+    overflow: hidden;
+    clear: both;
+} */
+
+#first:checked~.tab_item.ahtml {
+    display: block;
+}
+
+#first:checked~.tab_item:nth-of-type(2) {
+    display: none;
+}
+
+#second:checked~.tab_item.acss {
+    display: block;
+}
+
+#second:checked ~ .tab_item:nth-of-type(1) li:not(:first-child) {
+    display: none;
 }
 
 .tab_item>ul>li:nth-of-type(2n) {
@@ -271,10 +304,10 @@ input[type=radio]:nth-of-type(2):checked~div:nth-of-type(2) {
 /* 
 .HTML5{
     display: inline-block
-    pa
+    
 }
 .CSS{
     display: inline-block
 
-} */
-
+} 
+ */

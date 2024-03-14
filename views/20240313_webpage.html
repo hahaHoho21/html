@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
     <!-- [4] a 모양 미리 만들어두기 -->
     <link href="/css/myweb_core.css" rel="stylesheet">
     <!-- [5] body Layout 영역 - 화면설계서 -->
-    <link href="/css/myweb_layout.css" rel="stylesheet">
+    <!-- <link href="/css/webpage_layout.css" rel="stylesheet"> -->
 
     <!-- header 영역 style -->
     <link href="/css/myweb_header.css" rel="stylesheet">
@@ -26,6 +26,102 @@
     <link href="/css/myweb_aside.css" rel="stylesheet">
     <!-- footer 영역 style -->
     <link href="/css/myweb_footer" rel="stylesheet">
+    <style>
+        @import url("/css/webpage_layout.css") screen and (min-width:960px);
+        @import url("/css/webpage_layout_response.css") screen and (min-width:801px) and (max-width:959px);
+        @import url("/css/webpage_layout_min.css") screen and (max-width:800px);
+
+        @media screen and (min-width:1300px) {
+            body {
+                font-size: 1.1em;
+            }
+
+            h1 {
+                font-weight: 900;
+                font-size: 1.3em;
+                line-height: 1.3em;
+            }
+
+            h3 {
+                font-weight: 900;
+                font-size: 1.1em;
+                line-height: 1.1em;
+            }
+
+            header .tnb a {
+                padding: 10px 15px;
+            }
+
+            header .bnb a {
+                padding: 15px 20px;
+            }
+        }
+        @media screen and (max-width:800px) {
+            body {
+                font-size: .8em;
+            }
+
+            h1 {
+                font-weight: 900;
+                font-size: 1.1em;
+                line-height: 1.3em;
+            }
+
+            h3 {
+                font-weight: 900;
+                font-size: .9em;
+                line-height: 1.1em;
+            }
+
+            header .tnb a {
+                padding: 5px 5px;
+            }
+
+            header .bnb a {
+                padding: 5px 10px;
+            }
+            .wrap-header>header {
+                /* 중앙 배치 */
+                width: 600px; margin: 0 auto;
+            }
+        }
+        /* input {
+            font-size: larger;
+        } */
+        .mission_a{
+            position: relative;
+        }
+        .mission_a h1 a:hover::after {
+            content:'HTML5! CSS3! 실습입니다';
+            font: .7em Helvetica sans-serif;
+            color:blue;
+            
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 180px;
+        }
+        article form > div {
+            text-align: center;
+        }
+        article .c-ellipsis{
+            border: 1px solid black;
+            width: 100px;
+            /* 세트로 */
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        article .c-clip{
+            border: 1px solid black;
+            width: 100px;
+            /* 세트로 */
+            text-overflow: clip;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -34,11 +130,11 @@
             <header>
                 <nav class="tnb">
                     <ul>
-                        <li><a href="#a">Web1</a></li>
-                        <li><a href="#b">Mobile</a></li>
+                        <li><a href="#꼭여기">Web1</a></li>
+                        <li><a href="http://127.0.0.1:8888">Mobile</a></li>
                         <li><a href="#c">Game</a></li>
                         <li><a href="#d">Simulation</a></li>
-                        <li><a href="#e">Date</a></li>
+                        <li><a href="#e">Data</a></li>
                     </ul>
                 </nav>
                 <nav class="bnb">
@@ -47,95 +143,236 @@
                         <li><a href="#">HTML</a></li>
                         <li><a href="#">CSS</a></li>
                         <li><a href="#">JavaScript</a></li>
-                        <li><a href="#">jQery</a></li>
+                        <li><a href="#">jQuery</a></li>
                     </ul>
                 </nav>
                 <div class="logo">
                     <h1>Rint Development</h1>
-                    <h4>HTML5 + CSS3 Basic</h4>
+                    <h3>HTML5 + CSS3 Basic</h3>
                 </div>
             </header>
         </div>
         <div class="wrap-main">
             <section>
+                <article>
+                    <div class="c-ellipsis">
+                        sdfsdfsdfsdfsdfdsfsdf
+                    </div>
+                    <div class="c-clip">
+                        sdfsdfsdfsdfsdfdsfsdf
+                    </div>
+                    <div class="mission_a">
+                        <h1><a href="#">웹표준 2.0</a>테스트</h1>
+                    <div>
+                </article>
+                <article>
+                    <form method="get" action="#">
+                        <div>
+                            <input type="color" name="color">
+                        </div>  
+                        <div>
+                            <input type="date" name="date">
+                        </div>   
+                        <div>
+                            <select name="select">
+                                <optgroup label="과일">
+                                    <option value="f01">banana</option>
+                                    <option value="f02" selected>신선한딸기</option>
+                                    <option value="f03">waltnet</option>
+                                </optgroup>
+                                <optgroup label="구황작물">
+                                    <option value="f01">banana</option>
+                                    <option value="f02">신선한딸기</option>
+                                    <option value="f03">waltnet</option>
+                                </optgroup>
+                                
+                            </select>
+                        </div>
+                        <div>
+                            <input type="search" list="datalist" name="n3">
+                        </div>
+                        <div>
+                            <!-- <input type="submit" value="전달"> -->
+                            <button>기본type이submit</button>
+                            <button type="button">버튼1</button>
+                        </div>
+                        <div>
+                            id:<input type="text" name="id" required autofocus>
+                            pwd:<input type="password" name="pwd" required>
+                            readonly:<input type="text" name="readonly" value="readonly는value필수" readonly>
+                        </div> 
+                    </form>
+                </article>
                 <article class="article-1">
                     <h1>Flexbox</h1>
                     <div class="flex-3 menubar">
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
-                            error
-                            ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
-                            necessitatibus sit
-                            dignissimos neque exercitationem?</div>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
-                            error
-                            ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
-                            necessitatibus sit
-                            dignissimos neque exercitationem?</div>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
-                            error
-                            ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
-                            necessitatibus sit
-                            dignissimos neque exercitationem?</div>
+                        <div>
+                            fdsLorem!
+                        </div>
+                        <div>
+                            Lorem!
+                        </div>
+                        <div>
+                            Lorem!
+                        </div>
+                        <div>
+                            Lorem!
+                        </div>
                     </div>
+                    <br>
                     <div class="flex-3 inputform">
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
                             error
                             ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
                             necessitatibus sit
-                            dignissimos neque exercitationem?</div>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
+                            dignissimos neque exercitationem?
+                        </div>
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
                             error
                             ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
                             necessitatibus sit
-                            dignissimos neque exercitationem?</div>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
+                            dignissimos neque exercitationem?
+                        </div>
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
                             error
                             ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
                             necessitatibus sit
-                            dignissimos neque exercitationem?</div>
+                            dignissimos neque exercitationem?
+                        </div>
                     </div>
                 </article>
                 <article class="article-2">
-                    <h1>Gridbox</h1>
-                    <div class="grid-3">
-                        <div>Lorem ipsum1</div>
-                        <div>Lorem ipsum2</div>
-                        <div>Lorem ipsum3</div>
-                        <div>Lorem ipsum4</div>
-                        <div>Lorem ipsum5</div>
+                    <h1>Grid Layout</h1>
+                    <div class="grid-3 basis">
+                        <div>
+                            Lorem!
+                        </div>
+                        <div>
+                            Lorem!
+                        </div>
+                        <div>
+                            Lorem!
+                        </div>
+                        <div>
+                            Lorem!
+                        </div>
+                        <div>
+                            Lorem!
+                        </div>
+                        <div>
+                            Lorem!
+                        </div>
                     </div>
+                    <br>
                     <div class="grid-3">
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
-                            error
-                            ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
-                            necessitatibus sit
-                            dignissimos neque exercitationem?</div>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
-                            error
-                            ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
-                            necessitatibus sit
-                            dignissimos neque exercitationem?</div>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
-                            error
-                            ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
-                            necessitatibus sit
-                            dignissimos neque exercitationem?</div>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
-                            error
-                            ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
-                            necessitatibus sit
-                            dignissimos neque exercitationem?</div>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa
-                            error
-                            ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo
-                            necessitatibus sit
-                            dignissimos neque exercitationem?</div>
+                        <div>
+                            <div class="flex-card-item">
+                                <div>
+                                    <img class="fullsizeimg" src="https://dummyimage.com/500x700/ccc/000.png" >
+                                </div>
+                                <div class="flex-icons">
+                                    <div>
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                    </div>
+                                    <div>
+                                        하트
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#">[강아지] 보더 콜리</a>
+                                </div>
+                                <div>
+                                    남아 · 중성화 미완료 · 3살
+                                </div>
+                                <div>
+                                    지역 : 광주광역시 북구
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex-card-item">
+                                <div>
+                                    <img class="fullsizeimg" src="https://dummyimage.com/500x700/ccc/000.png" >
+                                </div>
+                                <div class="flex-icons">
+                                    <div>
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                    </div>
+                                    <div>
+                                        하트
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#">[강아지] 보더 콜리</a>
+                                </div>
+                                <div>
+                                    남아 · 중성화 미완료 · 3살
+                                </div>
+                                <div>
+                                    지역 : 광주광역시 북구
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex-card-item">
+                                <div>
+                                    <img class="fullsizeimg" src="https://dummyimage.com/500x700/ccc/000.png" >
+                                </div>
+                                <div class="flex-icons">
+                                    <div>
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                    </div>
+                                    <div>
+                                        하트
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#">[강아지] 보더 콜리</a>
+                                </div>
+                                <div>
+                                    남아 · 중성화 미완료 · 3살
+                                </div>
+                                <div>
+                                    지역 : 광주광역시 북구
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex-card-item">
+                                <div>
+                                    <img class="fullsizeimg" src="https://dummyimage.com/500x700/ccc/000.png" >
+                                </div>
+                                <div class="flex-icons">
+                                    <div>
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                        <img src="https://dummyimage.com/15/ccc/000.png">
+                                    </div>
+                                    <div>
+                                        하트
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#">[강아지] 보더 콜리</a>
+                                </div>
+                                <div>
+                                    남아 · 중성화 미완료 · 3살
+                                </div>
+                                <div>
+                                    지역 : 광주광역시 북구
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </article>
-                <article>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa error
-                    ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo necessitatibus sit
-                    dignissimos neque exercitationem?
                 </article>
             </section>
             <aside>
@@ -227,12 +464,21 @@
         </div>
         <div class="wrap-footer">
             <footer>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam id, aliquid dolores ipsa error
-                ipsum blanditiis at, totam ex quas, obcaecati ratione repellat laboriosam! Nemo necessitatibus sit
-                dignissimos neque exercitationem?
+                <div>
+                    slide images
+                </div>
+                <h3>HTML5 + CSS3 Basic</h3>
+                <address>Website Layout Basic</address>
             </footer>
         </div>
     </div>
+
+    <datalist id="datalist">
+        <option value="f01" label="aaa">banana</option>
+        <option value="f02">신선한딸기</option>
+        <option value="f03">waltnet</option>
+    </datalist>
+
 </body>
 
 </html>
