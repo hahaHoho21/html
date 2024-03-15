@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../css/myweb2.css" rel="stylesheet">
+    <link href="../css/signup.css" rel="stylesheet">
 </head>
 
 <body>
     <div>
         <div>
-            <hr style="border: 1px solid orangered;">
+            <hr>
             <section>
                 <table>
                     <tr>
                         <th>이름</th>
-                        <td colspan="3"><input type="text" id="name"></td>
+                        <td colspan="3"><input type="text" id="name" autoComplete="off"></td>
                     </tr>
                     <tr>
                         <th>아이디</th>
@@ -34,11 +34,16 @@
                     </tr>
                     <tr>
                         <th>비밀번호 힌트/답변</th>
-                        <td colspan="3"><select id="psdh">
-                                <option value="선택하세요">선택하세요&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
-                                <option value="태어난 곳은?">태어난 곳은?</option>
-                                <option value="초등학교 이름은?">초등학교 이름은?</option>
-                                <option value="가장 친한 친구 이름은?">가장 친한 친구 이름은?</option>
+                        <td colspan="3"><select id="psdh" name="option">
+                                <option value="">선택하세요</option>
+                                <option value="30">졸업한 초등학교 이름은?</option>
+                                <option value="31">제일 친한 친구의 핸드폰 번호는?</option>
+                                <option value="32">아버지 성함은?</option>
+                                <option value="33">어머니 성함은?</option>
+                                <option value="34">어릴 적 내 별명은?</option>
+                                <option value="35">가장 아끼는 물건은?</option>
+                                <option value="36">좋아하는 동물은?</option>
+                                <option value="37">좋아하는 색깔은?</option>
                             </select></td>
                     </tr>
                     <tr>
@@ -47,22 +52,24 @@
                     </tr>
                     <tr>
                         <th>이메일</th>
-                        <td colspan="3"><input type="text" id="email"></td>
+                        <td colspan="3"><input type="text" id="email" autoComplete="off"></td>
                     </tr>
                     <tr>
                         <th>전화번호</th>
                         <td colspan="3"><input type="number" id="number"></td>
                     </tr>
+                </table>
+                <table>
                     <tr>
                         <th>메일/sns 정보 수신</th>
-                        <td>
-                            <input type="radio" id="first">
-                            <label for="first">수신</label>
-                            <input type="radio" id="second">
-                            <label for="second">수신거부</label>
-                        </td>
+                        <td><input type="radio" id="first" name="option"></td>
+                        <td> <label for="first">수신</label> </td>
+                        <td> <input type="radio" id="second" name="option"></td>
+                        <td> <label for="second">수신거부</label></td>
                     </tr>
-                    <tr>
+                </table>
+                <table>
+                    <tr id="checkbox">
                         <th>관심분야</th>
                         <td><input type="checkbox" id="생두">생두</td>
                         <td><input type="checkbox" id="원두">원두</td>
@@ -71,14 +78,18 @@
                         <td><input type="checkbox" id="에스프레소">에스프레소</td>
                         <td><input type="checkbox" id="창업">창업</td>
                     </tr>
-
                 </table>
-                <hr style="border: 1px solid orangered;">
+                <hr>
             </section>
         </div>
         <div>
             <footer>
-
+                <div>
+                    <tr>
+                        <td><button>회원가입</button></td>
+                        <td><button>취소</button></td>
+                    </tr>
+                </div>
             </footer>
         </div>
     </div>

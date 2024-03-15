@@ -1,0 +1,59 @@
+/* 테이블 분리 주황색 선 */
+hr{
+    border: 1px solid orangered;
+    width: 500px;
+    position: relative;
+    right: 50px;
+}
+
+/* 메인 */
+body{
+    margin-top: 20px;
+    width: 600px;
+    font-family: sans-serif;
+    /* font-size: ; */
+}
+
+/* th */
+section th {
+    height: 25;
+}
+
+/* table 폰트 (첫번째 테이블 제외) */
+section > :not(first-child){
+    font-size: small;
+}
+
+/* 관심분야 마지막 테이블 분리 */
+#checkbox > th {
+    /* border: 1px solid black; */
+    width: 114.29px;
+}
+
+/* 메일/sns 정보수신 사이즈 */
+table:nth-child(2) > tbody > tr > th {
+    width: 114.29px;
+}
+
+/* 비밀번호 힌트답변 박스 */
+#psdh {
+    font-size: .7em;
+    height: 20.18px;
+    width: 170.35px;
+}
+
+/* 중복확인 폰트 */
+tbody > tr:nth-child(2) > td:nth-child(3) {
+    font-size: .9em;
+}
+
+/* 비밀번호 6자 이상 폰트 */
+tbody > tr:nth-child(3) > td:nth-child(3) {
+    font-size: .7em;
+}
+
+/* 회원가입 버튼 */
+footer > div{
+    position: relative;
+    left: 180px;
+}
