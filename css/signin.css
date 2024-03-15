@@ -1,0 +1,95 @@
+/* 전체 */
+.wrap{
+    margin-top: 30px;
+    width: 960px;
+
+}
+
+header{
+    margin-bottom: 30px;
+    height: 100px;
+}
+
+.wrap-main {
+    width: 960px;
+    clear: both;
+}
+
+/* kh이미지 */
+.img {
+    float: right;
+    width: 25%;
+}
+
+/* 로그인 박스 */
+fieldset {
+    width: 250px;
+    border: 2px solid black;
+    float: left;
+    width: 25%;
+    overflow: hidden;
+
+}
+
+/* 로그인 박스내 폰트 */
+fieldset>table {
+    text-align: left;
+    font-size: 0.8em;
+}
+
+/* 섹션 */
+.wrap-section {
+    float: left;
+    width: 80%;
+    height: 400px;
+    background-color: cornsilk;
+    display: flex;
+    align-items: center;
+    
+}
+
+/* 어사이드 */
+.wrap-aside {
+    float: left;
+    width: 20%;
+    height: 400px;
+    background-color: floralwhite;
+}
+.wrap-aside > div{
+    margin-top: 30px;
+}
+
+footer {
+    clear: both;
+    font-size: small;
+    text-align: center;
+}
+
+/* 스크롤 롤링*/
+.marquee {
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+    color: #333;
+}
+.marquee p {
+    position: absolute;
+    width: 100%;
+    /* 넓이 값 */
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    transform: translateX(100%);
+    /* 왼쪽으로 이동, 오른쪽 이동 시:translateX의 값을 전부 반대로*/
+    animation: scroll-left 15s linear infinite;
+    /* 키프레임 이름, 시간, 반응 속도, 반복여부 */
+}
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
