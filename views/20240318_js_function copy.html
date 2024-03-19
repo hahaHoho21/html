@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function f1(a1, a2, a3) {
+            console.log("f1 함수실행");
+            console.log(a1);
+            // console.log(arguments);
+            if (typeof a3 == "undefined") {
+                console.log("a3 기본설정해줄게");
+            } else {
+                console.log(a3);
+            }
+            console.log(a1, a2);
+
+        }
+        f1();
+        f1(10);
+        f1(10, "");
+        f1(10, "a2", 'a3'); // 두번째 인자는 버려짐
+
+        //TODO 가변인자 체크
+
+        function f2(a1, a2, a3) {
+            console.log("f1 함수실행");
+            console.log(a1, a2, a3);
+        }
+
+        f2();
+        f2(1, 10, "abcd", "가나다라");
+        f2(10, function () { console.log("익명함수") },
+            'a3');
+
+
+        var a10 = {
+            a: 10,
+            b: 20,
+            c: 30
+        }
+        console.log(a10);
+
+        var person1 = {
+            'n a m e': 'won',
+            age: 27
+        }
+        console.log(person1);
+
+        var person2 = {
+            name: 'jun',
+            age: 30
+
+        }
+        console.log(person2);
+
+        function f20(name, age) {
+            var person = {
+                name: name,
+                age: age
+            }
+            return person;
+        }
+        f20();
+        f20('haha', 11);
+        f20('hoho', 16);
+
+        function F21(name, age) {
+            this.name = name;
+            this.age = age
+
+            return person;
+        }
+
+
+
+
+        let jcw = f20('hehe', 22);
+        console.log(jcw.age);
+        console.log(jcw);
+        console.log(f20);
+
+        // console.log(f20(person)); defined 오류
+
+        let cw = new f20('가나', 55);
+
+        var personList = {};
+        personList.person1 = person1;
+        personList.person2 = person2;
+        // personList.person=person; // function이 아닌 object를 만들어서 추가해야함.
+        personList.jcw = jcw;
+        personList.cw = cw;
+
+        console.log(personList);
+
+        var date = new Date();
+        console.log(date);
+
+        // var h = document.getElementById('name');
+        // h.onclick = function{
+        //     (h(this).onclick = null);
+            
+        
+        // }
+
+
+    </script>
+    <div input type="text" name="name" id="name"></div>
+</body>
+
+</html>

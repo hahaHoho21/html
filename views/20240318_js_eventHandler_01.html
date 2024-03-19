@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- console.log(typeof(btn1Elem)); -->
+    <div input type="text" name="name" id="name"></div>
+    <button type="button" id="btn1">버튼1</button>
+    <button type="button" id="btn2">버튼2</button>
+
+    <script>
+        var date = new Date();
+
+        // 이벤트 발생시 기능 추가. 예)클릭시 로그에 현재시간 출력해줘.
+        var btn1Elem = document.getElementById('btn1');
+
+
+        // var cbF1 = function(){
+        //     console.log("방법1(고전방식) : "+date);
+        // }
+        // var cbF2 = function(){
+        //     console.log("방법2(표준방식) : "+date);
+        // }
+
+
+        // 방법 1
+        btn1Elem.onclick = function () {
+            console.log("방법1(고전방식) : " + date);
+        };
+
+        
+        // 방법 2
+        btn1Elem.addEventListener('click', function () { console.log("방법2(표준방식) : " + date); });
+
+
+        // 방법 3 
+        var cbF3 = function () {
+            console.log('방법3(인라인방식) : ' + date);
+        }
+    </script>
+    <!-- 방법 3-1 -->
+    <!-- <button type="button" id="btn3" onclick="(function(){console.log('방법3(인라인방식) : '+date);})()">버튼3</button> -->
+
+    <!-- 방법 3-2 -->
+    <button type="button" id="btn3" onclick="cbF3();">버튼3</button>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
