@@ -1,0 +1,82 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+/* 네비바 검색창 */
+body>header {
+    position: relative;
+    height: 70px;
+    background-color: #f8f9fa;
+}
+
+body>div.search,
+body>header>div {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#submit {
+    visibility: hidden;
+}
+
+/* 네비버 home, about */
+body>header>div>ul {
+    position: absolute;
+    left: 90px;
+}
+
+/* 네비바 회원가입 */
+body>header>div>div.text-end {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+    width: 180px;
+}
+
+body>div.d-flex.flex-column.flex-shrink-0.bg-light {
+    position: absolute;
+    top: 0;
+    /* height: 1153px; */
+    height: 100%;
+    width: 80px;
+}
+
+/* 슬라이드바 */
+.sidebar {
+    /* height: 1153px; */
+    height: 100%;
+    width: 360px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 4.5416em;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    transition: 0.7s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    color: lightgray;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
