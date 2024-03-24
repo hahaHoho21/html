@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+        // 디버깅용
+        document.write("안녕")
+        document.write("하세요.1")
+        // 화면 공백에서 뿌려짐, 화면 보여지는 상태에서 뿌리려면 ajax 비동기방식
+        // window.alert("경고문구")
+    </script>
+</head>
+
+<body>
+    <h1 id="id2">JavaScript 처음1</h1>
+    <h1 class="c2">JavaScript 처음2</h1>
+    <h1 class="c2">JavaScript 처음3</h1>
+
+
+    <script>
+
+        i=5
+
+        for(i=0; i<5; i++){
+            console.log(i)
+        }
+
+        // object 집중
+        var a15 = { k1: 1, k2: "S" }
+        // 기존의 k2를 지정하면 값 덮어씌움.
+        a15.k5 = "A15에 새 KEY K3 생성";
+        console.log(a15);
+
+        a16 = "a16은 앞에 window.생략과 동일";
+        console.log(a16);
+
+
+        // window 생략가능.
+        // window.alert("window객체의 alert라는 함수/메소드를 호출함");
+        // alert("window 객체명 생략하고 접근 가능함.")
+
+        // 인터프리터언어 a12와 a13은 아래에서 정의하였지만 바로 호출가능
+        console.log(typeof (a12));
+        console.log(a12());
+
+        var a3 = document.getElementById("id2");
+        console.log(a3);
+        var a4 = document.getElementsByClassName("c2");
+        console.log(a4);
+        var a5 = document.getElementsByTagName("h1");
+        console.log(a5);
+        var a6 = document.querySelector(".c2");
+        console.log(a6);
+        var a7 = document.querySelectorAll(".c2");
+        console.log(a7);
+        var a8;
+        var a8_0 = null;
+        var a8_1 = 81;
+        var a8_2 = "81";
+        var a8_3 = true;
+        // typeof = (undefined, object, string, number, boolean)
+        console.log(typeof a8, a8_0, a8_1, a8_2, a8_3);
+        var a9 = { k1: 123, name: "홍길동", gender: "f", score: { kor: 100, eng: 90, math: 70 } }; // object(class) 
+        console.log(a9);
+        console.log(a9.k1);
+        console.log(a9.score.math);
+        // document.write("====지금까지 JS의 변수====")
+        // document.write("\n")
+
+        //함수 정의 1
+        var a10 = function () {
+            console.log("function 형태 변수 선언")
+            console.log("변수명이 function명이 됩니다.")
+            console.log(1020 * 382);
+            return a9;
+        }
+        //함수 정의 로그 1
+        console.log(typeof (a10));
+        console.log(a10);
+
+        //함수 실행 1
+        a10();
+        console.log(a10());
+        // document.write(a10);
+        document.write(a10());
+
+        //함수 정의 2
+        function a12() {
+            console.log("function 정의")
+            console.log("자바와 동일한 위치에 함수명이 있습니다.")
+            console.log(1020 * 3);
+            return 23 * 2;
+        }
+        //함수 정의 로그 2
+        console.log(typeof (a12));
+        console.log(a12());
+
+        //함수 실행 2
+        a12();
+
+        function a13() {
+            document.write("function 정의")
+            document.write("자바와 동일한 위치에 함수명이 있습니다.")
+            document.write(1020 * 3);
+            return 23 * 2;
+        }
+        //함수 정의 로그 2
+        document.write(typeof (a13));
+        document.write(a13());
+    </script>
+
+
+    <script>
+        // 디버깅용
+        document.write("안녕")
+        document.write("하세요.2")
+
+        // [i] i번째 h1의 내용을 찾아서 태그를 넣어줘
+        document.getElementsByTagName("h1")[0].innerHTML = '<a href="#">바꿈문자1</a>';
+        // [i] i번째 h1의 내용을 찾아서 변경(innerHTML)해줘
+        document.getElementsByTagName("h1")[1].innerText = "바꿈문자2"
+        //  id 누구누구의 내용을 찾아줘
+        // document.getElementById("id").innerText
+
+
+    </script>
+    <script>
+        //
+        // var a1 = window.prompt("진입할 곳의 이름을 작성해주세요.");
+        // document.getElementsByTagName("h1")[0].innerHTML=a1;
+        // console.log(a1);
+
+        // var a2 = window.confirm("계속 진행하시겠습니까?");
+        // console.log(a2);
+    </script>
+
+
+</body>
+
+</html>

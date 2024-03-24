@@ -1,3 +1,39 @@
+<!-- cd7j520imp -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=cd7j520imp&submodules=geocoder"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+
+<body>
+    <div class="search">
+        <input id="address" type="text" placeholder="검색할 주소">
+        <input id="submit" type="button" value="주소검색">
+    </div>
+    <div id="map" style="width:1000px;height:500px;"></div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>주소</th>
+                    <th>위도</th>
+                    <th>경도</th>
+                </tr>
+            </thead>
+            <tbody id="mapList"></tbody>
+        </table>
+    </div>
+</body>
+<script>
     //지도를 그려주는 함수 실행
     selectMapList();
 
@@ -7,7 +43,6 @@
             query: address
         }, function (status, response) {
             if (status === naver.maps.Service.Status.ERROR) {
-
                 return alert('Something Wrong!');
             }
             if (response.v2.meta.totalCount === 0) {
@@ -25,7 +60,9 @@
             if (item.englishAddress) {
                 htmlAddresses.push('[영문명 주소] ' + item.englishAddress);
             }
+
             insertAddress(item.roadAddress, item.x, item.y);
+
         });
     }
 
@@ -40,8 +77,11 @@
         e.preventDefault();
         searchAddressToCoordinate($('#address').val());
     });
+    naver.maps.Event.once(map, 'init_stylemap', initGeocoder);
 
-    // 검색정보 작성과 지도 마커 기능.
+
+
+    //검색정보를 테이블로 작성해주고, 지도에 마커를 찍어준다.
     function insertAddress(address, latitude, longitude) {
         var mapList = "";
         mapList += "<tr>"
@@ -54,7 +94,7 @@
 
         var map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(longitude, latitude),
-            zoom: 17
+            zoom: 14
         });
         var marker = new naver.maps.Marker({
             map: map,
@@ -66,17 +106,17 @@
     function selectMapList() {
 
         var map = new naver.maps.Map('map', {
-            center: new naver.maps.LatLng(37.4985248, 127.0326343),
-            zoom: 17,
-            mapTypeControl: true
+            center: new naver.maps.LatLng(37.3595704, 127.105399),
+            zoom: 10
         });
     }
+
 
     // 지도를 이동하게 해주는 함수
     function moveMap(len, lat) {
         var mapOptions = {
             center: new naver.maps.LatLng(len, lat),
-            zoom: 17,
+            zoom: 15,
             mapTypeControl: true
         };
         var map = new naver.maps.Map('map', mapOptions);
@@ -85,3 +125,6 @@
             map: map
         });
     }
+</script>
+
+</html>

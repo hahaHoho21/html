@@ -9,16 +9,57 @@
 
 <body>
 
+    <button type="button" id="btn-add">추가</button>
+    <table border=1>
+        <thead>
+            <tr id="tbl_col1">
+                <td style="color: blue;">컬럼명1</td>
+                <td>컬럼명2</td>
+            </tr>
+            </tr>
+        <tbody >
+        </tbody>
+    </table>
+    <script>
+        let count = 1;
+        var cbf4 = function () {
+            console.log("cbf4체크");
+
+            // 방법 1
+            // var strValue = '<tr>';
+            // strValue += '<td>'+count+'tbl_col3</td>';
+            // strValue += '<td>컬럼명</td>';
+            // strValue += '</tr>';
+            // document.getElementsByTagName("tbody")[0].innerHTML = strValue;
+           
+            // document.querySelectorAll();
+
+            //  방법 2 - DOM
+            var nodeTr = document.createElement("tr");
+            var nodeTd1 = document.createElement("td");
+            var nodeTd2 = document.createElement("td");
+            var nodeText1 = document.createTextNode(count);
+            var nodeText2 = document.createTextNode("");
+            nodeTd1.appendChild(nodeText1);
+            nodeTd2.appendChild(nodeText2);
+            nodeTr.appendChild(nodeTd1);
+            nodeTr.appendChild(nodeTd2);
+            document.getElementsByTagName("tbody")[0].appendChild(nodeTr);
+            count++
+        }
+        document.getElementById('btn-add').addEventListener("click", cbf4);
+    </script>
+
     <!-- console.log(typeof(btn1Elem)); -->
     <div input type="text" name="name" id="name"></div>
     <button type="button" id="btn1">버튼1</button>
     <button type="button" id="btn2">버튼2</button>
-        <!-- 방법 3-1 -->
+    <!-- 방법 3-1 -->
     <!-- <button type="button" id="btn3" onclick="(function(){console.log('방법3(인라인방식) : '+date);})()">버튼3</button> -->
 
     <!-- 방법 3-2 -->
     <button type="button" id="btn3" onclick="cbF3();">버튼3</button>
-    
+
     <form method="get" action="#" id="ftest">
         <input type="text" name="n1">
         <button type="submit" onclick="return cbF3();">서브밋 버튼</button>
@@ -27,16 +68,16 @@
 
     <script>
         var date = new Date();
-                
+
         // 이벤트 발생시 기능 추가. 예)클릭시 로그에 현재시간 출력해줘.
         var btn1Elem = document.getElementById('btn1');
-        
+
         // 방법 3 
-        var cbF1 = function(){
-            console.log("방법1(고전방식) : "+date);
+        var cbF1 = function () {
+            console.log("방법1(고전방식) : " + date);
         }
-        var cbF2 = function(){
-            console.log("방법2(표준방식) : "+date);
+        var cbF2 = function () {
+            console.log("방법2(표준방식) : " + date);
         }
         var cbF3 = function () {
             console.log("방법3(인라인방식) : " + date);
@@ -48,20 +89,20 @@
         // onsubmit 방식
         var frmEle = document.getElementById('ftest');
         frmEle.onsubmit = cbF1;
-        
-        
+
+
         // 방법 1
         btn1Elem.onclick = function () {
             console.log("방법1(고전방식) : " + date);
         };
-        
+
         // 방법 2
         btn1Elem.addEventListener('click', function () { console.log("방법2(표준방식) : " + date); });
 
-        </script>
+    </script>
 
-        
-    
+
+
 
 
 </body>

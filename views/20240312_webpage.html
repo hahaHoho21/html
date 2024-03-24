@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>나의 첫 웹페이지</title>
     <link href="../css/reset.css" rel="stylesheet">
     <link href="../css/myweb.css" rel="stylesheet">
@@ -41,17 +42,23 @@
     </div>
 
     <div class="wrap-main">
-        <section>
+        <section class="section">
             <article>
-                <h1 class="orbit-regular">Main Article</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat libero posuere nibh
-                    posuere,
-                    posuere aliquam ligula maximus. Nam porttitor fermentum vulputate. Interdum et malesuada fames ac
-                    ante
-                    ipsum
-                    primis in faucibus. Vivamus ac nunc in nulla facilisis imperdiet. Sed molestie massa et urna egestas
-                    mollis.</p>
+                <div>
+                    <h1>모달</h1>
+                    <button type="button" class="btn modal">모달띄우기
+                        <img alt="aaa" src="">
+                        <span>모달</span>
+                        <span>띄우기</span>
+                    </button>
+                    <div class="wrap-modal modal project write">
+                        <div class="modal-content modal project write">
+                            <div class="btn modal-close">x</div>
+                            <div>Lorem</div>
+                            <div>ipsum</div>
+                        </div>
+                    </div>
+                </div>
             </article>
             <article>
                 <h1 class="orbit-regular">Main Article</h1>
@@ -97,7 +104,49 @@
                     primis in faucibus. Vivamus ac nunc in nulla facilisis imperdiet. Sed molestie massa et urna egestas
                     mollis.</p>
             </article>
+            <article>
+                <h1 class="orbit-regular">Main Article</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat libero posuere nibh
+                    posuere,
+                    posuere aliquam ligula maximus. Nam porttitor fermentum vulputate. Interdum et malesuada fames ac
+                    ante
+                    ipsum
+                    primis in faucibus. Vivamus ac nunc in nulla facilisis imperdiet. Sed molestie massa et urna egestas
+                    mollis.</p>
+            </article>
+            <script>
+                $(loadedHandler)
+                function loadedHandler() {
+                    $(".btn.modal").on("click", btnModalClickHandler)
+                    $(".btn.modal-close").on("click", btnModalCloseClickHandler);
+                    $(".section .wrap-modal").on("click", btnModalCloseClickHandler);
+                }
+                function btnModalClickHandler(e) {
+                    console.log(e);
+                    console.log(event);
+                    console.log(this);
+                    $(".section .wrap-modal").css("display", "block")
+                }
+                function btnModalCloseClickHandler(e) {
+                    console.log(e.target);
+                    console.log(event.target);
+                    console.log(this);
+                    console.log(document.getElementsByClassName("wrap-modal")[0]);
+                    console.log($(".section .wrap-modal").get(0));
 
+                    if (
+                        // .wrap-modal 
+                        (event.target !== $(".section .wrap-modal").get(0))
+                            // || (event.target == ($(".btn .modal-close").get(0))
+                            )
+                        ($(".section .wrap-modal").css("display", "none"))
+                    ;
+                }
+
+
+
+            </script>
 
         </section>
         <aside>

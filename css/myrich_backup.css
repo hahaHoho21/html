@@ -1,13 +1,3 @@
-/* 코어 */
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-y: hidden;
-}
-
 /* 네비바 검색창 */
 body>header {
     position: relative;
@@ -25,11 +15,7 @@ body>header>div {
     visibility: hidden;
 }
 
-#map > div:nth-child(5){
-    z-index: -1;
-}
-
-/* 네비버 home, about */
+/* 네비바 home, about */
 body>header>div>ul {
     position: absolute;
     left: 90px;
@@ -43,22 +29,21 @@ body>header>div>div.text-end {
     width: 180px;
 }
 
-/* 사이드바 */
-body>#mainSidebar {
+body>div.d-flex.flex-column.flex-shrink-0.bg-light {
     position: absolute;
     top: 0;
-    height: 100%;
+    height: 1153px;
     width: 80px;
 }
 
 /* 슬라이드바 */
 .sidebar {
-    height: 100%;
+    height: 1153px;
     width: 360px;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 4.531em;
+    left: 4.5416em;
     background-color: #f8f9fa;
     overflow-x: hidden;
     transition: 0.7s;

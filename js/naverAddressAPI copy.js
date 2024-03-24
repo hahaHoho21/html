@@ -1,3 +1,4 @@
+
 var map = new naver.maps.Map("map", {
   center: new naver.maps.LatLng(37.4985248, 127.0326343),
   zoom: 17,
@@ -48,8 +49,11 @@ function searchCoordinateToAddress(latlng) {
 }
 
 function searchAddressToCoordinate(address) {
-  naver.maps.Service.geocode({query: address}, function (status, response) {
+  naver.maps.Service.geocode({
+    query: address
+  }, function (status, response) {
     if (status === naver.maps.Service.Status.ERROR) {
+      //TODO
       return alert('Something Wrong!');
     }
 
@@ -83,12 +87,10 @@ function searchAddressToCoordinate(address) {
     map.setCenter(point);
     infoWindow.open(map, point);
 
-    // keydown(enter)로 검색시 슬라이딩에 표기
-    $(".sinfo").html("<tr><td>" + item.roadAddress + "</td></tr>");
+  //TODO
+    $(".sinfo").html("<tr><td>"+item.roadAddress+"</td></tr>");
   });
 }
-
-
 
 function initGeocoder() {
   map.addListener('click', function (e) {
@@ -96,8 +98,7 @@ function initGeocoder() {
   });
 
   document.getElementById('submit').addEventListener('click', function () {
-    var address = document.getElementById('address').value;
-    searchAddressToCoordinate(address); // searchAddressToCoordinate 함수 호출
+    searchAddressToCoordinate(document.getElementById('address').value);
   });
 
   document.getElementById('address').addEventListener('keydown', function (e) {
@@ -105,12 +106,11 @@ function initGeocoder() {
     console.log(this);
     var keyCode = e.target.which || e.target.keyCode;
     if (keyCode === 13) { // Enter key
-      var address = document.getElementById('address').value;
-      searchAddressToCoordinate(address); // searchAddressToCoordinate 함수 호출
+      searchAddressToCoordinate(document.getElementById('address').value);
     }
   });
 
-  searchAddressToCoordinate(''); // 초기에도 주소를 전달하여 함수 호출
+  searchAddressToCoordinate('');
 }
 
 function makeAddress(item) {
@@ -189,88 +189,33 @@ function hasAddition(addition) {
 
 naver.maps.onJSContentLoaded = initGeocoder
 
-var cadastralLayer = new naver.maps.CadastralLayer();
+// 지적도 버튼
 
+var cadastralLayer = new naver.maps.CadastralLayer();
 var btn = $('#cadastral');
 
-btn.on('click', function (e) {
-  e.preventDefault();
 
-  if (cadastralLayer.getMap()) {
+// var defaultset = function(){ btn.addClass('control-on').val('지적도 끄기') }; 
+// defaultset();
+
+
+//nav-link py-3 border-bottom control-btn
+//nav-link py-3 border-bottom control-btn control-on
+
+btn.on('click', function(e) {
+    e.preventDefault();
+    
+    if (cadastralLayer.getMap()) {
+        cadastralLayer.setMap(null);
+        btn.removeClass('control-on').val('지적도 켜기');
+    } else {
+        cadastralLayer.setMap(map);
+        btn.addClass('control-on').val('지적도 끄기');
+    }
+});
+
+
+naver.maps.Event.once(map, 'init', function() {
     cadastralLayer.setMap(null);
-    btn.removeClass('control-on').val('지적도 켜기');
-  } else {
-    cadastralLayer.setMap(map);
-    btn.addClass('control-on').val('지적도 끄기');
-  }
+    //cadastralLayer.setMap(map);
 });
-
-naver.maps.Event.once(map, 'init', function () {
-  cadastralLayer.setMap(null);
-});
-
-// 마커
-// var position = new naver.maps.LatLng(37.3595704, 127.105399);
-
-
-// 거리뷰
-
-// <style type="text/css">
-// #wrap .buttons {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     z-index: 1000;
-//     padding: 5px;
-// }
-
-// #wrap .buttons .control-btn {
-//     margin: 0 5px 5px 0;
-// }
-// </style>
-
-// <div id="wrap" class="section">
-// <h2>네이버 거리뷰 레이어 표시하기</h2>
-// <p>네이버 거리뷰 레이어를 생성하는 예제입니다. 이 예제는 jQuery 구문을 포함하고 있습니다.</p>
-// <div id="map" style="width:100%;height:600px;">
-//     <div class="buttons">
-//         <input id="street" type="button" value="거리뷰" class="control-btn control-on" />
-//     </div>
-// </div>
-// <code id="snippet" class="snippet"></code>
-// </div>
-// <script id="code">
-// var map = new naver.maps.Map('map', {
-//     center: new naver.maps.LatLng(37.3595704, 127.105399),
-//     mapTypeControl: true,
-//     mapTypeControlOptions: {
-//         style: naver.maps.MapTypeControlStyle.DROPDOWN
-//     }
-// });
-
-// var streetLayer = new naver.maps.StreetLayer();
-
-// var btn = $('#street');
-
-// naver.maps.Event.addListener(map, 'streetLayer_changed', function (streetLayer) {
-//     if (streetLayer) {
-//         btn.addClass('control-on');
-//     } else {
-//         btn.removeClass('control-on');
-//     }
-// });
-
-// btn.on("click", function (e) {
-//     e.preventDefault();
-
-//     if (streetLayer.getMap()) {
-//         streetLayer.setMap(null);
-//     } else {
-//         streetLayer.setMap(map);
-//     }
-// });
-
-// naver.maps.Event.once(map, 'init', function () {
-//     streetLayer.setMap(map);
-// });
-// </script>

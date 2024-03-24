@@ -1,0 +1,74 @@
+/* 작업 순서 */
+/* 기본(최적) 해상도 - 960px */
+/* header */
+
+.changa {
+    font-family: "Changa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 10px;
+    font-style: normal;
+}
+
+header {
+    width: 960px;
+    height: 160px;
+    margin: 0 auto;
+
+}
+
+.wrap-header {
+    background-color: rgb(255, 238, 238);
+}
+
+.wrap-tnb li {
+    float: left;
+    
+}
+
+.wrap-bnb li {
+    float: left;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+}
+
+.wrap-logo {
+    clear: both;
+    
+
+}
+
+
+.wrap-body {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+section {
+    float: left;
+    width: 650px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+
+}
+
+aside {
+    float: right;
+    width: 200px;
+    background-color: rgb(233, 255, 255);
+
+
+
+}
+
+footer {
+    clear: both;
+    background-color: rgb(201, 201, 201);
+}
+
+.wrap-footer {
+    width: 960px;
+    margin: 0 auto;
+}

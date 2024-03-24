@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/myweb_section.css" rel="stylesheet">
+    <script>
+        document.write("안녕")
+
+        a = 1;
+        if (a >= 2) {
+            console.log(true)
+        } else {
+            console.log(false)
+        }
+
+        // var a = prompt("진입할 곳의 이름을 작성해주세요.");
+
+        switch (a) {
+            case "1": console.log("1을 입력하였습니다");
+                break;
+            case "2": console.log("2를 입력하였습니다");
+                break;
+            case "3": console.log("3를 입력하였습니다");
+                break;
+            default: console.log("1~3이외의 키를 입력하였습니다");
+        }
+
+        for (var a = 0; a < 5; a++) {
+            console.log("반복문 a = " + a)
+        }
+        var exit = true;
+        var exitcount = 3;
+        while (exit) {
+            exitcount--;
+            if (exitcount <= 1) {
+                exit = false
+            }
+            console.log("while test입니다.");
+        }
+        console.log("while test 종료");
+
+        // do {
+        //     exitcount = 3;
+        //     exit = true;
+        // } while (exit) {
+        //     exitcount--;
+        //     if (exitcount <= 1) {
+        //         exit = false;
+        //     }
+        //     console.log("do while test입니다.");
+        // }
+        // console.log("do while test 종료");
+        var a = prompt("숫자를 입력하시오.");
+    </script>
+
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <h1>4의 배수일까 아닐까</h1>
+        </div>
+        <div>
+            
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
